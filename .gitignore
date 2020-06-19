@@ -1,0 +1,3 @@
+bin/
+obj/
+!.do_not_delete

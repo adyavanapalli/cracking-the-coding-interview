@@ -17,4 +17,3 @@ clean:
 
 test: bin/test_suite
 	bin/test_suite
-

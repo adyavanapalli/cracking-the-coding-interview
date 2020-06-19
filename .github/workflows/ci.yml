@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  Linux:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Install Google Test
+      run: |
+        git clone https://github.com/google/googletest.git && cd googletest
+        mkdir build && cd build
+        cmake .. && make -j && sudo make install
+
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: make
+
+    - name: Test
+      run: make test

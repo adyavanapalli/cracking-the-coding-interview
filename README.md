@@ -1,6 +1,9 @@
 # Cracking the Coding Interview
 
-Solutions to problems from "Cracking the Coding Interview 6E" by Gayle Laakmann McDowell.
+Solutions to problems from "Cracking the Coding Interview 6E" by Gayle Laakmann
+McDowell.
+
+![CI](https://github.com/adyavanapalli/cracking-the-coding-interview/workflows/CI/badge.svg)
 
 ## Problems
 

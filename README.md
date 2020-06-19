@@ -2,7 +2,7 @@
 
 Solutions to problems from "Cracking the Coding Interview 6E" by Gayle Laakmann McDowell.
 
-## problems
+## Problems
 
 ### Chapter 01 - Arrays and Strings
 

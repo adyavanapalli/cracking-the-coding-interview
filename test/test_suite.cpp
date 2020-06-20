@@ -8,6 +8,7 @@ extern "C"
 
     #include "problem-01-01.c"
     #include "problem-01-02.c"
+    #include "problem-01-03.c"
 }
 
 TEST(chapter_01_tests, cstring_has_unique_characters_returns_true_if_cstring_has_unique_characters)
@@ -60,6 +61,40 @@ TEST(chapter_01_tests, cstrings_are_permutations_returns_false_when_strings_cont
 
     // Assert.
     ASSERT_FALSE(are_permutations);
+}
+
+TEST(chapter_01_tests, urlify_returns_url_with_spaces_replaced_by_escaped_characters)
+{
+    // Arrange.
+    char* url_in = (char*)malloc(35 * sizeof(char));
+    strncpy(url_in, "www.google.com?search=tupac shakur", 35);
+
+    char* url_out_expected = (char*)"www.google.com?search=tupac%20shakur";
+
+    // Act.
+    char* url_out_actual = urlify(url_in);
+
+    // Assert.
+    ASSERT_STREQ(url_out_expected, url_out_actual);
+
+    free(url_in);
+}
+
+TEST(chapter_01_tests, urlify_returns_same_url_if_there_are_no_spaces)
+{
+    // Arrange.
+    char* url_in = (char*)malloc(35 * sizeof(char));
+    strncpy(url_in, "www.google.com?search=tupac_shakur", 35);
+
+    char* url_out_expected = (char*)"www.google.com?search=tupac_shakur";
+
+    // Act.
+    char* url_out_actual = urlify(url_in);
+
+    // Assert.
+    ASSERT_STREQ(url_out_expected, url_out_actual);
+
+    free(url_in);
 }
 
 int main(int argc, char **argv)

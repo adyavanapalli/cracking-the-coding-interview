@@ -9,6 +9,7 @@ extern "C"
     #include "problem-01-01.c"
     #include "problem-01-02.c"
     #include "problem-01-03.c"
+    #include "problem-01-04.c"
 }
 
 TEST(chapter_01_tests, cstring_has_unique_characters_returns_true_if_cstring_has_unique_characters)
@@ -95,6 +96,42 @@ TEST(chapter_01_tests, urlify_returns_same_url_if_there_are_no_spaces)
     ASSERT_STREQ(url_out_expected, url_out_actual);
 
     free(url_in);
+}
+
+TEST(chapter_01_tests, is_palindrome_permutation_returns_true_for_a_palindrome)
+{
+    // Arrange.
+    char* palindrome = (char*)"taco cat";
+
+    // Act.
+    bool result = is_palindrome_permutation(palindrome);
+
+    // Assert.
+    ASSERT_TRUE(result);
+}
+
+TEST(chapter_01_tests, is_palindrome_permutation_returns_true_for_a_permuted_palindrome)
+{
+    // Arrange.
+    char* permuted_palindrome = (char*)"tact coa";
+
+    // Act.
+    bool result = is_palindrome_permutation(permuted_palindrome);
+
+    // Assert.
+    ASSERT_TRUE(result);
+}
+
+TEST(chapter_01_tests, is_palindrome_permutation_returns_false_for_a_non_palindrome)
+{
+    // Arrange.
+    char* non_palindrome = (char*)"tack coa";
+
+    // Act.
+    bool result = is_palindrome_permutation(non_palindrome);
+
+    // Assert.
+    ASSERT_FALSE(result);
 }
 
 int main(int argc, char **argv)

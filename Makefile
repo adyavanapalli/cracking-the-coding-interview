@@ -9,11 +9,13 @@ INCLUDE=-I src
 
 all: bin/test_suite
 
-bin/test_suite: test/test_suite.cpp src/problem-01-01.c src/problem-01-02.c
+bin/test_suite: test/test_suite.cpp src/problem-01-01.c \
+                                    src/problem-01-02.c \
+                                    src/problem-01-03.c
 	$(CXX) $(CXXFLAGS) test/test_suite.cpp -o bin/test_suite $(INCLUDE) $(GTEST_LDFLAGS)
 
 clean:
-	rm -f bin/* obj/*
+	rm -f bin/*
 
 test: bin/test_suite
 	bin/test_suite

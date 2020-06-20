@@ -9,9 +9,9 @@ McDowell.
 
 ### Chapter 01 - Arrays and Strings
 
-[01.01 Is Unique](/src/)  
-[01.02 check Permutation](/src/)  
-[01.03 URLify](/src/)  
+[01.01 Is Unique](/src/problem-01-01.c)  
+[01.02 Check Permutation](/src/problem-01-02.c)  
+[01.03 URLify](/src/problem-01-03.c)  
 [01.04 Palindrome Permutation](/src/)  
 [01.05 One Away](/src/)  
 [01.06 String Compression](/src/)  
@@ -44,13 +44,13 @@ McDowell.
 [04.01 Route Between Nodes](/src/)  
 [04.02 Minimal Tree](/src/)  
 [04.03 List of Depths](/src/)  
-[04.04 check Balanced](/src/)  
+[04.04 Check Balanced](/src/)  
 [04.05 Validate BST](/src/)  
 [04.06 Successor](/src/)  
 [04.07 Build Order](/src/)  
 [04.08 First Common Ancestor](/src/)  
 [04.09 BST Sequences](/src/)  
-[04.10 check Subtree](/src/)  
+[04.10 Check Subtree](/src/)  
 [04.11 Random Node](/src/)  
 [04.12 Paths with Sum](/src/)  
 
@@ -86,7 +86,7 @@ McDowell.
 [07.04 Parking Lot](/src/)  
 [07.05 Online Book Reader](/src/)  
 [07.06 Jigsaw](/src/)  
-[07.07 chat Server](/src/)  
+[07.07 Chat Server](/src/)  
 [07.08 Othello](/src/)  
 [07.09 Circular Array](/src/)  
 [07.10 Minesweeper](/src/)  
@@ -139,7 +139,7 @@ McDowell.
 
 [11.01 Mistake](/src/)  
 [11.02 Random Crashes](/src/)  
-[11.03 chess Test](/src/)  
+[11.03 Chess Test](/src/)  
 [11.04 No Test Tools](/src/)  
 [11.05 Test a Pen](/src/)  
 [11.06 Test an ATM](/src/)  

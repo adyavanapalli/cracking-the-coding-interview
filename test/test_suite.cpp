@@ -10,6 +10,7 @@ extern "C"
     #include "problem-01-02.c"
     #include "problem-01-03.c"
     #include "problem-01-04.c"
+    #include "problem-01-05.c"
 }
 
 TEST(chapter_01_tests, cstring_has_unique_characters_returns_true_if_cstring_has_unique_characters)
@@ -132,6 +133,66 @@ TEST(chapter_01_tests, is_palindrome_permutation_returns_false_for_a_non_palindr
 
     // Assert.
     ASSERT_FALSE(result);
+}
+
+TEST(chapter_01_tests, is_pale_one_or_less_away_from_ple_returns_true)
+{
+    // Arrange.
+    char* s1 = (char*)"pale";
+    char* s2 = (char*)"ple";
+
+    // Assert.
+    ASSERT_TRUE(is_one_or_less_away(s1, s2));
+}
+
+TEST(chapter_01_tests, is_pales_one_or_less_away_from_pale_returns_true)
+{
+    // Arrange.
+    char* s1 = (char*)"pales";
+    char* s2 = (char*)"pale";
+
+    // Assert.
+    ASSERT_TRUE(is_one_or_less_away(s1, s2));
+}
+
+TEST(chapter_01_tests, is_pale_one_or_less_away_from_bale_returns_true)
+{
+    // Arrange.
+    char* s1 = (char*)"pale";
+    char* s2 = (char*)"bale";
+
+    // Assert.
+    ASSERT_TRUE(is_one_or_less_away(s1, s2));
+}
+
+TEST(chapter_01_tests, is_pale_one_or_less_away_from_bake_returns_false)
+{
+    // Arrange.
+    char* s1 = (char*)"pale";
+    char* s2 = (char*)"bake";
+
+    // Assert.
+    ASSERT_FALSE(is_one_or_less_away(s1, s2));
+}
+
+TEST(chapter_01_tests, is_fail_one_or_less_away_from_bail_returns_true)
+{
+    // Arrange.
+    char* s1 = (char*)"fail";
+    char* s2 = (char*)"bail";
+
+    // Assert.
+    ASSERT_TRUE(is_one_or_less_away(s1, s2));
+}
+
+TEST(chapter_01_tests, is_fail_one_or_less_away_from_bait_returns_false)
+{
+    // Arrange.
+    char* s1 = (char*)"fail";
+    char* s2 = (char*)"bait";
+
+    // Assert.
+    ASSERT_FALSE(is_one_or_less_away(s1, s2));
 }
 
 int main(int argc, char **argv)

@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run doctest
-        run: python -m doctest problems/*.py
+        run: python -m doctest --verbose problems/*.py

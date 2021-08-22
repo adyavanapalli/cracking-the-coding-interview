@@ -264,3 +264,49 @@ def RotateMatrix(image: List[List[int]]) -> List[List[int]]:
             image[n - j - 1][i] = image_ij
 
     return image
+
+
+def ZeroMatrix(matrix: List[List[int]]) -> List[List[int]]:
+    """Sets the element's row and column to zero if the element in the matrix is
+    0.
+
+    >>> ZeroMatrix([[0]])
+    [[0]]
+
+    >>> ZeroMatrix([[1]])
+    [[1]]
+
+    >>> ZeroMatrix([[1, 0]])
+    [[0, 0]]
+
+    >>> ZeroMatrix([[1, 2], [0, 4]])
+    [[0, 2], [0, 0]]
+
+    >>> ZeroMatrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    >>> ZeroMatrix([[1, 2, 3], [4, 0, 6], [7, 8, 9]])
+    [[1, 0, 3], [0, 0, 0], [7, 0, 9]]
+
+    >>> ZeroMatrix([[0, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12],[13, 14, 15, 16]])
+    [[0, 0, 0, 0], [0, 6, 7, 8], [0, 10, 11, 12], [0, 14, 15, 16]]
+    """
+
+    m = len(matrix)
+    n = len(matrix[0])
+
+    zeros = []
+
+    for i in range(m):
+        for j in range(n):
+            if matrix[i][j] == 0:
+                zeros.append((i, j))
+
+    for (i, j) in zeros:
+        for row_associated_with_col_j in range(m):
+            matrix[row_associated_with_col_j][j] = 0
+
+        for col_associated_with_row_i in range(n):
+            matrix[i][col_associated_with_row_i] = 0
+
+    return matrix

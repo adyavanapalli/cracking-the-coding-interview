@@ -310,3 +310,43 @@ def ZeroMatrix(matrix: List[List[int]]) -> List[List[int]]:
             matrix[i][col_associated_with_row_i] = 0
 
     return matrix
+
+
+def StringRotation(s1: str, s2: str) -> bool:
+    """Returns whether s2 is a rotation of s1.
+
+    >>> StringRotation("", "")
+    True
+
+    >>> StringRotation("a", "")
+    False
+
+    >>> StringRotation("", "b")
+    False
+
+    >>> StringRotation("a", "a")
+    True
+
+    >>> StringRotation("a", "b")
+    False
+
+    >>> StringRotation("ab", "ba")
+    True
+
+    >>> StringRotation("aba", "bab")
+    False
+
+    >>> StringRotation("abc", "acb")
+    False
+
+    >>> StringRotation("erbottlewat", "waterbottle")
+    True
+
+    >>> StringRotation("kelly", "ellyk")
+    True
+
+    >>> StringRotation("erbottlewat", "waterbottle")
+    True
+    """
+
+    return len(s1) == len(s2) and s2 in (s1 + s1)

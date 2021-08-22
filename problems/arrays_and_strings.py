@@ -233,7 +233,7 @@ def StringCompression(s: str) -> str:
     return compressed_s
 
 
-def RotateMatrix(image: List[List[int]]):
+def RotateMatrix(image: List[List[int]]) -> List[List[int]]:
     """Rotates the specified image by 90 degrees.
 
     >>> RotateMatrix([[0]])

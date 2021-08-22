@@ -233,17 +233,34 @@ def StringCompression(s: str) -> str:
     return compressed_s
 
 
-# def RotateMatrix(image: List[List[int]]):
-#     """Rotates the specified image by 90 degrees.
+def RotateMatrix(image: List[List[int]]):
+    """Rotates the specified image by 90 degrees.
 
-#     >>> RotateMatrix([[0]])
-#     [[0]]
+    >>> RotateMatrix([[0]])
+    [[0]]
 
-#     >>> RotateMatrix([[0, 1], [2, 3]])
-#     [[1, 3], [0, 2]]
+    >>> RotateMatrix([[0, 1], [2, 3]])
+    [[1, 3], [0, 2]]
 
-#     >>> RotateMatrix([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
-#     [[2, 5, 8], [1, 4, 7], [0, 3, 6]]
-#     """
+    >>> RotateMatrix([[0, 1, 2], [3, 4, 5], [6, 7, 8]])
+    [[2, 5, 8], [1, 4, 7], [0, 3, 6]]
 
-#     return image
+    >>> RotateMatrix([[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11], [12, 13, 14, 15]])
+    [[3, 7, 11, 15], [2, 6, 10, 14], [1, 5, 9, 13], [0, 4, 8, 12]]
+
+    >>> RotateMatrix([[0, 1, 2, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25]])
+    [[5, 10, 15, 20, 25], [4, 9, 14, 19, 24], [2, 8, 13, 18, 23], [1, 7, 12, 17, 22], [0, 6, 11, 16, 21]]
+    """
+
+    n = len(image)
+
+    for i in range(n // 2):
+        for j in range(i, n - i - 1):
+            image_ij = image[i][j]
+
+            image[i][j] = image[j][n - i - 1]
+            image[j][n - i - 1] = image[n - i - 1][n - j - 1]
+            image[n - i - 1][n - j - 1] = image[n - j - 1][i]
+            image[n - j - 1][i] = image_ij
+
+    return image

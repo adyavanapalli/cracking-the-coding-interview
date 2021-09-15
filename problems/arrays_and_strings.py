@@ -1,4 +1,4 @@
-"""ArraysAndStrings.py"""
+"""arrays_and_strings.py"""
 
 from typing import List
 
